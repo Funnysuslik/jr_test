@@ -9,5 +9,6 @@ class Rating < ApplicationRecord
       greater_than_or_equal_to: 1,
       less_than_or_equal_to: 5
     }
-  validates :user_id, uniqueness: { scope: :post_id }
+  validates :user_id,
+    uniqueness: { scope: :post_id }
 end
