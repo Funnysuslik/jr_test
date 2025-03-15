@@ -2,7 +2,7 @@ class Api::V1::RatingsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def create
-    post = Post.find(params[:id])
+    post = Post.find(params[:post_id])
     user = User.find(params[:user_id])
 
     rating = post.ratings.new(user: user, value: params[:value])
