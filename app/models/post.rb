@@ -2,6 +2,8 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :ratings
   validates :ip, presence: true
+  validates :title, presence: true
+  validates :body, presence: true
   validate :validate_ip_format
 
   private
