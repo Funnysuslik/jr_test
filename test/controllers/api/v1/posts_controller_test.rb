@@ -1,14 +1,14 @@
-require 'test_helper'
+require "test_helper"
 
 class Api::V1::PostsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @user = User.create!(login: 'user_one')
-    @post = Post.create!(title: 'New Post', body: 'Post body', user: @user, ip: '127.0.0.1')
+    @user = User.create!(login: "user_one")
+    @post = Post.create!(title: "New Post", body: "Post body", user: @user, ip: "127.0.0.1")
   end
 
   test "should create post" do
-    assert_difference('Post.count') do
-      post api_v1_posts_url, params: { title: 'New Post', body: 'Post body', user_login: 'user_one', ip: '127.0.0.1' }
+    assert_difference("Post.count") do
+      post api_v1_posts_url, params: { title: "New Post", body: "Post body", user_login: "user_one", ip: "127.0.0.1" }
     end
     assert_response :created
   end
@@ -20,12 +20,12 @@ class Api::V1::PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should not create post with invalid data" do
-    post api_v1_posts_url, params: { title: nil, body: nil, user_login: 'user_one', ip: '127.0.0.1' }
+    post api_v1_posts_url, params: { title: nil, body: nil, user_login: "user_one", ip: "127.0.0.1" }
     assert_response :unprocessable_entity
   end
 
   test "should get ip_list" do
-    get '/api/v1/posts/ips'
+    get "/api/v1/posts/ips"
     assert_response :success
   end
 end

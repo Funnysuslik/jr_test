@@ -10,7 +10,7 @@ curl.headers['Content-Type'] = 'application/json'
     user_login: "user_#{i < 100 ? i : rand(100)}",
     title: "Post Title #{i}",
     body: "This is the content for post #{i}.",
-    ip: "192.168.1.#{rand(50)}",
+    ip: "192.168.1.#{rand(50)}"
   }
 
   curl.url = 'http://localhost:3000/api/v1/posts'
@@ -22,7 +22,7 @@ curl.headers['Content-Type'] = 'application/json'
       rating_body = {
         user_id: rand(100),
         post_id: i + 1,
-        value: rand(1..5),
+        value: rand(1..5)
       }
 
       curl.url = 'http://localhost:3000/api/v1/ratings'
