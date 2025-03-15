@@ -10,7 +10,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "login should be present" do
-    @user.login = " "
+    @user.login = ""
     assert_not @user.valid?
   end
 end
