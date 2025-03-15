@@ -7,7 +7,7 @@ Rails.application.routes.draw do
         end
       end
 
-      post 'rating', to: 'ratings#create'
+      post 'ratings', to: 'ratings#create'
     end
   end
 end
