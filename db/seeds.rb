@@ -20,7 +20,7 @@ curl.headers['Content-Type'] = 'application/json'
   if i >= 100 && rand < 0.75
     rand(1..5).times do
       rating_body = {
-        user_id: rand(100),
+        user_id: rand(1..100),
         post_id: i + 1,
         value: rand(1..5)
       }
