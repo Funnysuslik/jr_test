@@ -4,7 +4,7 @@ class Api::V1::PostsController < ApplicationController
   def index
     limit = (params[:n] || 10).to_i
     @posts = Post.top_rated(limit) # Assign @posts explicitly
-    render json: @posts.as_json(only: [:id, :title, :body])
+    render json: @posts.as_json(only: [ :id, :title, :body ])
   end
 
   def create
